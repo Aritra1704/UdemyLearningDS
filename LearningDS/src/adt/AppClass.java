@@ -1,5 +1,7 @@
 package adt;
 
+import java.util.LinkedList;
+
 public class AppClass {
 
 	public static void main(String[] args) {
@@ -12,6 +14,8 @@ public class AppClass {
 		myCounter.increment();
 		
 		System.out.println(myCounter.getCurrentValue() + "");
+		
+		LinkedList list = new LinkedList();
 	}
 
 }
