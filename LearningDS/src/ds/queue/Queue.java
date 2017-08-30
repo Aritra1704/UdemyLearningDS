@@ -17,9 +17,33 @@ public class Queue {
 	}
 	
 	public void insert(long value) {
+		if(rear == (maxSize - 1)) {//circular queue
+			rear = -1;//overwrite previous value
+		}
 		rear++;
 		queArray[rear] = value;
 		nItems++;
+	}
+	
+	public long remove() {//remove item from the front of the queue
+		long temp = queArray[front];
+		front++;
+		if(front == maxSize)
+			front = 0;//we can set front back to 0 if all items are removed
+		nItems--;
+		return temp;
+	}
+	
+	public long peekfront() {
+		return queArray[front];
+	}
+	
+	public boolean isEmpty() {
+		return (nItems == 0);
+	}
+	
+	public boolean isFull() {
+		return (nItems == maxSize);
 	}
 	
 	public void view() {
